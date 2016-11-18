@@ -32,7 +32,7 @@ public final class SplishActivity extends MvpActivity<SplishPresenter, SplishVie
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mNavigator.navigateToMain(SplishActivity.this);
+                mNavigator.navigateToHome(SplishActivity.this);
             }
         },2000);
 

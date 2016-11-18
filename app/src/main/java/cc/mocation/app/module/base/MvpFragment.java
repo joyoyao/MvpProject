@@ -10,6 +10,7 @@ import android.support.v4.content.Loader;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import cc.mocation.app.MocationApplication;
+import cc.mocation.app.injection.HasComponent;
 import cc.mocation.app.injection.components.AppComponent;
 import cc.mocation.app.presenter.BasePresenter;
 import cc.mocation.app.presenter.loader.PresenterFactory;
@@ -56,7 +57,7 @@ public abstract class MvpFragment<P extends BasePresenter<V>, V> extends Fragmen
     }
 
     private void injectDependencies() {
-        setupComponent(MocationApplication.get(getActivity()).getAppComponent());
+        setupComponent();
     }
 
     @Override
@@ -132,8 +133,12 @@ public abstract class MvpFragment<P extends BasePresenter<V>, V> extends Fragmen
 
     /**
      * Setup the injection component for this view
-     *
-     * @param appComponent the app component
      */
-    protected abstract void setupComponent(@NonNull AppComponent appComponent);
+    protected abstract void setupComponent();
+
+
+
+    protected <C> C getComponent(Class<C> componentType) {
+        return componentType.cast(((HasComponent<C>) getActivity()).getComponent());
+    }
 }

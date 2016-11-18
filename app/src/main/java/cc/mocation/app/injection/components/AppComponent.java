@@ -18,6 +18,7 @@ package cc.mocation.app.injection.components;
 import android.app.Application;
 import android.content.Context;
 
+import cc.mocation.app.data.DataManager;
 import javax.inject.Singleton;
 
 import cc.mocation.app.injection.ApplicationContext;
@@ -35,5 +36,7 @@ public interface AppComponent {
     Context context();
     Application application();
     Navigator navigator();
+    DataManager dataManager();
+
 
 }

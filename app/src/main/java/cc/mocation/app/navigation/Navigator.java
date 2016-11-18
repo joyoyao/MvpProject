@@ -22,7 +22,7 @@ import android.content.Context;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import cc.mocation.app.module.main.MainActivity;
+import cc.mocation.app.module.home.HomeActivity;
 
 
 /**
@@ -41,9 +41,9 @@ public class Navigator {
      *
      * @param context A Context needed to open the destiny activity.
      */
-    public void navigateToMain(Context context) {
+    public void navigateToHome(Context context) {
         if (context != null) {
-            MainActivity.start((Activity) context);
+            HomeActivity.start((Activity) context);
         }
     }
 

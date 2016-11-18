@@ -20,6 +20,7 @@ public final class SplishPresenterImpl extends BasePresenterImpl<SplishView> imp
     public void onStart(boolean firstStart) {
         super.onStart(firstStart);
 
+
         // Your code here. Your view is available using mView and will not be null until next onStop()
     }
 

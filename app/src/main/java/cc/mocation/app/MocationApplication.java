@@ -8,6 +8,7 @@ import com.frogermcs.androiddevmetrics.AndroidDevMetrics;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.squareup.leakcanary.LeakCanary;
 
+import butterknife.ButterKnife;
 import cc.mocation.app.injection.components.AppComponent;
 import cc.mocation.app.injection.components.DaggerAppComponent;
 import cc.mocation.app.injection.modules.AppModule;
@@ -28,6 +29,7 @@ public class MocationApplication extends Application {
     public void onCreate() {
         super.onCreate();
         AndroidThreeTen.init(this);
+        ButterKnife.setDebug(BuildConfig.DEBUG);
         this.initializeInjector();
         if (BuildConfig.DEBUG) {
             AndroidDevMetrics.initWith(this);

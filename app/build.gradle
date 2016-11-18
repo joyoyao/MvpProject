@@ -69,6 +69,12 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile "com.squareup.retrofit2:converter-gson:2.1.0"
+    compile "com.squareup.retrofit2:adapter-rxjava:2.1.0"
+
+    //    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+
     compile 'com.squareup.okhttp3:okhttp:3.4.2'
     //权限库https://github.com/hotchemi/PermissionsDispatcher 权限管理库
     compile 'com.github.hotchemi:permissionsdispatcher:2.2.0'

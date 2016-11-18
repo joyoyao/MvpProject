@@ -3,6 +3,7 @@ package cc.mocation.app.injection.modules;
 import android.app.Application;
 import android.content.Context;
 
+import cc.mocation.app.data.remote.RibotsService;
 import javax.inject.Singleton;
 
 import cc.mocation.app.injection.ApplicationContext;
@@ -37,6 +38,12 @@ public class AppModule {
     @Provides
     Navigator provideNavigator() {
         return new Navigator();
+    }
+
+
+    @Provides
+    @Singleton RibotsService provideRibotsService() {
+        return RibotsService.Creator.newRibotsService();
     }
 
 //    @Provides

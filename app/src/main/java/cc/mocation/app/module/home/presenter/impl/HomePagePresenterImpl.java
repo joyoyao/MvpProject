@@ -1,19 +1,16 @@
-package cc.mocation.app.module.main.presenter;
-
-import android.support.annotation.NonNull;
-
+package cc.mocation.app.module.home.presenter.impl;
+import cc.mocation.app.module.home.presenter.HomePagePresenter;
+import cc.mocation.app.module.home.view.HomePageView;
 import cc.mocation.app.presenter.BasePresenterImpl;
-import cc.mocation.app.module.main.presenter.MainPresenter;
-import cc.mocation.app.module.main.view.MainView;
 
 import javax.inject.Inject;
 
-public final class MainPresenterImpl extends BasePresenterImpl<MainView> implements MainPresenter {
+public final class HomePagePresenterImpl extends BasePresenterImpl<HomePageView> implements HomePagePresenter {
+
     // The view is available using the mView variable
 
     @Inject
-    public MainPresenterImpl() {
-
+    public HomePagePresenterImpl() {
     }
 
     @Override
