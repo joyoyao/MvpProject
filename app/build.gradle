@@ -32,7 +32,8 @@ android {
         debug {
             // Uses new built-in shrinker http://tools.android.com/tech-docs/new-build-system/built-in-shrinker+
             useProguard false
-            applicationIdSuffix '.bate'
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-DEBUG'
         }
     }
 }

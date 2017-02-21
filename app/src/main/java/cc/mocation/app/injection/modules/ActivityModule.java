@@ -1,29 +1,26 @@
 package cc.mocation.app.injection.modules;
 
-import android.app.Activity;
-import android.content.Context;
+import java.lang.ref.WeakReference;
 
-import cc.mocation.app.injection.ActivityContext;
+import cc.mocation.app.injection.ActivityScope;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ActivityModule {
+public abstract class ActivityModule<T> {
 
-    private Activity mActivity;
+    protected final WeakReference<T> activity;
 
-    public ActivityModule(Activity activity) {
-        mActivity = activity;
+
+    public ActivityModule(T activity) {
+        this.activity = new WeakReference<>(activity);
     }
 
     @Provides
-    Activity provideActivity() {
-        return mActivity;
+    @ActivityScope
+    public T provideActivity() {
+        return activity.get();
     }
 
-    @Provides
-    @ActivityContext
-    Context providesContext() {
-        return mActivity;
-    }
+
 }

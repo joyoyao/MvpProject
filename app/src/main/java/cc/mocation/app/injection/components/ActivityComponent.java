@@ -16,10 +16,8 @@
 package cc.mocation.app.injection.components;
 
 
-import cc.mocation.app.injection.ActivityScope;
-import cc.mocation.app.injection.modules.ActivityModule;
-import cc.mocation.app.module.splish.SplishActivity;
-import dagger.Subcomponent;
+import android.app.Activity;
+import dagger.MembersInjector;
 
 /**
  * A base component upon which fragment's components may depend.
@@ -27,9 +25,6 @@ import dagger.Subcomponent;
  * <p>
  * Subtypes of ActivityComponent should be decorated with annotation:
  */
-@ActivityScope
-@Subcomponent(modules = ActivityModule.class)
-public interface ActivityComponent {
-
-    void inject(SplishActivity mainActivity);
+public interface ActivityComponent<A extends Activity> extends MembersInjector<A> {
 }
+

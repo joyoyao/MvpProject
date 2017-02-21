@@ -18,9 +18,10 @@ package cc.mocation.app.injection.components;
 import android.app.Application;
 import android.content.Context;
 
-import cc.mocation.app.data.DataManager;
 import javax.inject.Singleton;
 
+import cc.mocation.app.MocationApplication;
+import cc.mocation.app.data.DataManager;
 import cc.mocation.app.injection.ApplicationContext;
 import cc.mocation.app.injection.modules.AppModule;
 import cc.mocation.app.navigation.Navigator;
@@ -38,5 +39,5 @@ public interface AppComponent {
     Navigator navigator();
     DataManager dataManager();
 
-
+    MocationApplication inject(MocationApplication application);
 }

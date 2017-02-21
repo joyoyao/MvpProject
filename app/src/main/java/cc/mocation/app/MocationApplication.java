@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
 
-import com.facebook.stetho.Stetho;
 import com.frogermcs.androiddevmetrics.AndroidDevMetrics;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.squareup.leakcanary.LeakCanary;
@@ -25,6 +24,7 @@ import static android.os.Build.VERSION_CODES.GINGERBREAD;
 public class MocationApplication extends Application {
 
     private AppComponent mAppComponent;
+
 
     @Override
     public void onCreate() {
@@ -53,6 +53,7 @@ public class MocationApplication extends Application {
         this.mAppComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
+        mAppComponent.inject(this);
     }
 
     public static MocationApplication get(Context context) {
@@ -72,4 +73,9 @@ public class MocationApplication extends Application {
     public AppComponent getAppComponent() {
         return this.mAppComponent;
     }
+
+//    @Override public ActivityComponentBuilder getActivityComponentBuilder(
+//        Class<? extends Activity> activityClass) {
+//        return activityComponentBuilders.get(activityClass);
+//    }
 }
